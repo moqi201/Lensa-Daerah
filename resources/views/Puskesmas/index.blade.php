@@ -17,6 +17,13 @@
         'CACHE_STALE'   => 'Cache kedaluwarsa',
         'UNAVAILABLE'   => 'Tidak tersedia',
     ][$meta['source']] ?? $meta['source'];
+
+    // LOGIKA PEMBATASAN CARD:
+    // Cek apakah dropdown bernilai 'SEMUA' dan kolom pencarian kosong
+    $isDefaultView = ($selectedKabupaten === 'SEMUA' && empty($searchQuery));
+    
+    // Jika tampilan awal, batasi 8. Jika difilter/dicari, tampilkan semua.
+    $puskesmasList = $isDefaultView ? array_slice($data['items'], 0, 8) : $data['items'];
 @endphp
 
 <!-- JUDUL & FORM PENCARIAN -->
@@ -62,8 +69,8 @@
 
     <div class="mb-6 flex flex-wrap items-center justify-between gap-3">
         <p class="text-sm text-slate-300" role="status">
-            Menampilkan <strong class="text-white">{{ count($data['items']) }}</strong> Puskesmas ditemukan
-            @if(($meta['total_source_records'] ?? 0) > count($data['items']))
+            Menampilkan <strong class="text-white">{{ count($puskesmasList) }}</strong> Puskesmas ditemukan
+            @if(($meta['total_source_records'] ?? 0) > count($puskesmasList))
                 <span class="text-slate-500">dari {{ $meta['total_source_records'] }} record valid</span>
             @endif
         </p>
@@ -74,7 +81,7 @@
 
     <!-- GRID CARD PUSKESMAS -->
     <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-        @forelse($data['items'] as $puskesmas)
+        @forelse($puskesmasList as $puskesmas)
             <article class="glass flex min-w-0 flex-col justify-between p-6 transition hover:border-white/20">
                 <div>
                     <div class="mb-4 flex items-start justify-between gap-3">
