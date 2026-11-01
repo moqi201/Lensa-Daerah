@@ -64,7 +64,7 @@
 </section>
 
 <section class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8" aria-label="Hasil pencarian Puskesmas">
-    <!-- STATUS SUMBER DATA & CATATAN KUALITAS -->
+    <!-- STATUS SUMBER DATA & CATATAN KUALITAS -->  
     @include('partials.data-status', ['meta' => $meta])
 
     <div class="mb-6 flex flex-wrap items-center justify-between gap-3">
