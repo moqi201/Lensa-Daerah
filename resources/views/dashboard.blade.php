@@ -74,7 +74,7 @@
                         <i class="fa-solid fa-map-location-dot text-mist" aria-hidden="true"></i> Pilih wilayah Kab / Kota
                     </label>
                     <select id="kabupaten" name="kabupaten" onchange="this.form.submit()" class="field font-semibold">
-                        <option value="SEMUA" {{ $selectedKabupaten == 'SEMUA' ? 'selected' : '' }}>-- Semua Kab/Kota Jawa Barat --</option>
+                        <option value="SEMUA" {{ $selectedKabupaten == 'SEMUA' ? 'selected' : '' }}>Semua Kab/Kota Jawa Barat</option>
                         @foreach($kabOptions as $kab)
                             <option value="{{ $kab }}" {{ $selectedKabupaten == $kab ? 'selected' : '' }}>{{ $kab }}</option>
                         @endforeach

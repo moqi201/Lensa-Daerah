@@ -49,7 +49,7 @@
             <div>
                 <label for="kabupaten" class="sr-only">Filter kabupaten atau kota</label>
                 <select id="kabupaten" name="kabupaten" onchange="this.form.submit()" class="field font-semibold">
-                    <option value="SEMUA" {{ $selectedKabupaten == 'SEMUA' ? 'selected' : '' }}>-- Semua Kab/Kota --</option>
+                    <option value="SEMUA" {{ $selectedKabupaten == 'SEMUA' ? 'selected' : '' }}>Semua Kab/Kota</option>
                     @foreach($kabOptions as $kab)
                         <option value="{{ $kab }}" {{ $selectedKabupaten == $kab ? 'selected' : '' }}>{{ $kab }}</option>
                     @endforeach
