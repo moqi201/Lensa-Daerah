@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+@section('title', 'Direktori Puskesmas Jawa Barat - LENSA DAERAH')
 
 @section('content')
 @php
@@ -18,80 +19,87 @@
     ][$meta['source']] ?? $meta['source'];
 @endphp
 
-<section class="py-8 bg-gradient-to-b from-white to-slate-50 border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="md:flex md:items-center md:justify-between gap-6">
+<!-- JUDUL & FORM PENCARIAN -->
+<section class="border-b border-white/10" aria-labelledby="directory-title">
+    <div class="mx-auto max-w-7xl px-4 pb-10 pt-10 sm:px-6 lg:px-8 lg:pt-14">
+        <span class="chip"><i class="fa-solid fa-hospital text-mist" aria-hidden="true"></i> Direktori Fasilitas Kesehatan</span>
+        <h1 id="directory-title" class="mt-4 text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl">
+            Daftar & Alamat Puskesmas Jawa Barat
+        </h1>
+        <p class="mt-3 max-w-2xl text-base leading-relaxed text-slate-300">
+            Cari nama puskesmas, lokasi kecamatan, dan buka langsung di Google Maps.
+        </p>
+
+        <!-- FORM FILTER & PENCARIAN -->
+        <form method="GET" action="{{ route('puskesmas.index') }}" role="search"
+              class="glass mt-8 grid gap-3 p-4 sm:grid-cols-2 lg:grid-cols-[1fr_17rem_auto]">
             <div>
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-50 text-blue-700 border border-blue-200 text-xs font-semibold mb-2">
-                    <i class="fa-solid fa-hospital"></i> Direktori Fasilitas Kesehatan
-                </div>
-                <h1 class="text-3xl font-serif font-bold text-slate-900">Daftar & Alamat Puskesmas Jawa Barat</h1>
-                <p class="text-slate-600 text-sm mt-1">Cari nama puskesmas, lokasi kecamatan, dan buka langsung di Google Maps.</p>
+                <label for="q" class="sr-only">Cari Puskesmas atau kecamatan</label>
+                <input type="search" id="q" name="q" value="{{ $searchQuery }}" autocomplete="off"
+                       placeholder="Cari Puskesmas / Kecamatan..." class="field font-medium">
             </div>
 
-            <!-- FORM FILTER & PENCARIAN -->
-            <form method="GET" action="{{ route('puskesmas.index') }}" class="mt-4 md:mt-0 flex flex-col sm:flex-row gap-3">
-                <input type="text" name="q" value="{{ $searchQuery }}" placeholder="Cari Puskesmas / Kecamatan..." class="bg-white border border-slate-300 text-slate-800 text-sm rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-emerald-500 font-medium">
-
-                <select name="kabupaten" onchange="this.form.submit()" class="bg-white border border-slate-300 text-slate-800 text-sm rounded-xl px-4 py-2.5 font-semibold focus:ring-2 focus:ring-emerald-500">
+            <div>
+                <label for="kabupaten" class="sr-only">Filter kabupaten atau kota</label>
+                <select id="kabupaten" name="kabupaten" onchange="this.form.submit()" class="field font-semibold">
                     <option value="SEMUA" {{ $selectedKabupaten == 'SEMUA' ? 'selected' : '' }}>-- Semua Kab/Kota --</option>
                     @foreach($kabOptions as $kab)
                         <option value="{{ $kab }}" {{ $selectedKabupaten == $kab ? 'selected' : '' }}>{{ $kab }}</option>
                     @endforeach
                 </select>
+            </div>
 
-                <button type="submit" class="bg-emerald-600 text-white font-semibold text-sm px-5 py-2.5 rounded-xl hover:bg-emerald-700 transition-colors">
-                    <i class="fa-solid fa-magnifying-glass mr-1"></i> Cari
-                </button>
-            </form>
-        </div>
+            <button type="submit" class="btn-primary sm:col-span-2 lg:col-span-1">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Cari
+            </button>
+        </form>
     </div>
 </section>
 
-<section class="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8" aria-label="Hasil pencarian Puskesmas">
     <!-- STATUS SUMBER DATA & CATATAN KUALITAS -->
     @include('partials.data-status', ['meta' => $meta])
 
-    <div class="flex items-center justify-between mb-6">
-        <span class="text-sm font-semibold text-slate-600">
-            Menampilkan <strong class="text-slate-900">{{ count($data['items']) }}</strong> Puskesmas ditemukan
+    <div class="mb-6 flex flex-wrap items-center justify-between gap-3">
+        <p class="text-sm text-slate-300" role="status">
+            Menampilkan <strong class="text-white">{{ count($data['items']) }}</strong> Puskesmas ditemukan
             @if(($meta['total_source_records'] ?? 0) > count($data['items']))
-                <span class="text-slate-400 font-normal">dari {{ $meta['total_source_records'] }} record valid</span>
+                <span class="text-slate-500">dari {{ $meta['total_source_records'] }} record valid</span>
             @endif
-        </span>
-        <span class="text-xs text-slate-400 bg-slate-100 px-3 py-1 rounded-full border border-slate-200">
+        </p>
+        <span class="chip text-slate-300">
             Sumber: {{ $sourceLabel }}@if($meta['source'] === 'LIVE_REST_API' && $meta['latency'] !== null) ({{ $meta['latency'] }} ms)@endif
         </span>
     </div>
 
     <!-- GRID CARD PUSKESMAS -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
         @forelse($data['items'] as $puskesmas)
-            <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+            <article class="glass flex min-w-0 flex-col justify-between p-6 transition hover:border-white/20">
                 <div>
-                    <div class="flex items-start justify-between gap-3 mb-3">
+                    <div class="mb-4 flex items-start justify-between gap-3">
                         @if($puskesmas['nama_kecamatan'])
-                            <span class="px-2.5 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-bold rounded-lg uppercase">
+                            <span class="rounded-lg border border-aws/40 bg-aws/15 px-2.5 py-1 text-xs font-bold text-mist">
                                 Kec. {{ $puskesmas['nama_kecamatan'] }}
                             </span>
                         @else
-                            <span class="px-2.5 py-1 bg-slate-50 text-slate-500 border border-slate-200 text-xs font-semibold rounded-lg">
+                            <span class="rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-semibold text-slate-400">
                                 Kecamatan tidak tersedia
                             </span>
                         @endif
-                        <span class="text-xs font-mono text-slate-400">{{ $puskesmas['kode_puskesmas'] ?? 'Kode tidak tersedia' }}</span>
+                        <span class="shrink-0 font-mono text-xs text-slate-500">{{ $puskesmas['kode_puskesmas'] ?? 'Kode tidak tersedia' }}</span>
                     </div>
 
-                    <h3 class="font-bold text-lg text-slate-900 leading-snug">{{ $puskesmas['nama_puskesmas'] }}</h3>
-                    <p class="text-xs font-semibold text-slate-500 uppercase mt-1">{{ $puskesmas['nama_kabupaten_kota'] }}</p>
+                    <h2 class="break-words text-lg font-bold leading-snug text-white">{{ $puskesmas['nama_puskesmas'] }}</h2>
+                    <p class="mt-1 text-xs font-semibold text-slate-400">{{ $puskesmas['nama_kabupaten_kota'] }}</p>
 
-                    <div class="mt-4 pt-3 border-t border-slate-100">
-                        <p class="text-xs text-slate-600 leading-relaxed flex items-start gap-2">
-                            <i class="fa-solid fa-location-dot text-rose-500 mt-0.5"></i>
+                    <div class="mt-4 border-t border-white/10 pt-4">
+                        <p class="flex items-start gap-2.5 text-sm leading-relaxed text-slate-300">
+                            <i class="fa-solid fa-location-dot mt-1 text-orchid" aria-hidden="true"></i>
                             @if($puskesmas['alamat'])
-                                <span>{{ $puskesmas['alamat'] }}</span>
+                                <span class="min-w-0 break-words">{{ $puskesmas['alamat'] }}</span>
                             @else
-                                <span class="italic text-slate-400">Alamat tidak tersedia di sumber data</span>
+                                <span class="italic text-slate-500">Alamat tidak tersedia di sumber data</span>
                             @endif
                         </p>
                     </div>
@@ -100,29 +108,32 @@
                 <div class="mt-6">
                     <a href="{{ $puskesmas['maps_url'] }}" target="_blank" rel="noopener noreferrer"
                        title="Membuka pencarian Google Maps berdasarkan nama dan wilayah. Ini bukan verifikasi alamat."
-                       class="w-full inline-flex items-center justify-center gap-2 bg-slate-900 text-white hover:bg-emerald-600 text-xs font-bold py-2.5 px-4 rounded-xl transition-all">
-                        <i class="fa-solid fa-map-location-dot text-emerald-400"></i> Buka Petunjuk Google Maps
+                       class="btn-ghost w-full">
+                        <i class="fa-solid fa-map-location-dot text-mist" aria-hidden="true"></i>
+                        Buka Petunjuk Google Maps
+                        <span class="sr-only">untuk {{ $puskesmas['nama_puskesmas'] }} (tab baru)</span>
                     </a>
                 </div>
-            </div>
+            </article>
         @empty
             @if($meta['source'] === 'UNAVAILABLE')
-                <div class="col-span-full bg-white rounded-2xl border border-slate-200 p-12 text-center">
-                    <i class="fa-solid fa-plug-circle-exclamation text-4xl text-slate-300 mb-3"></i>
-                    <h3 class="font-bold text-slate-700">Daftar Puskesmas belum dapat dimuat</h3>
-                    <p class="text-slate-500 text-xs mt-1">Sumber data tidak dapat diakses. Lihat keterangan di bagian atas halaman, lalu muat ulang beberapa saat lagi.</p>
+                <div class="glass col-span-full p-12 text-center">
+                    <i class="fa-solid fa-plug-circle-exclamation mb-3 text-4xl text-slate-600" aria-hidden="true"></i>
+                    <h2 class="font-bold text-slate-100">Daftar Puskesmas belum dapat dimuat</h2>
+                    <p class="mx-auto mt-1 max-w-md text-xs text-slate-400">Sumber data tidak dapat diakses. Lihat keterangan di bagian atas halaman, lalu muat ulang beberapa saat lagi.</p>
                 </div>
             @else
-                <div class="col-span-full bg-white rounded-2xl border border-slate-200 p-12 text-center">
-                    <i class="fa-solid fa-hospital-user text-4xl text-slate-300 mb-3"></i>
-                    <h3 class="font-bold text-slate-700">Data Puskesmas Tidak Ditemukan</h3>
-                    <p class="text-slate-500 text-xs mt-1">Coba ubah kata kunci pencarian atau pilih kabupaten/kota yang lain.</p>
+                <div class="glass col-span-full p-12 text-center">
+                    <i class="fa-solid fa-hospital-user mb-3 text-4xl text-slate-600" aria-hidden="true"></i>
+                    <h2 class="font-bold text-slate-100">Data Puskesmas Tidak Ditemukan</h2>
+                    <p class="mx-auto mt-1 max-w-md text-xs text-slate-400">Coba ubah kata kunci pencarian atau pilih kabupaten/kota yang lain.</p>
+                    <a href="{{ route('puskesmas.index') }}" class="btn-ghost mt-5">Atur ulang pencarian</a>
                 </div>
             @endif
         @endforelse
     </div>
 
-    <p class="mt-6 text-xs text-slate-400">
+    <p class="mt-8 text-xs leading-relaxed text-slate-500">
         Tautan Google Maps adalah pencarian berdasarkan nama dan wilayah dari data sumber. Tautan itu tidak membuktikan bahwa alamat sudah diverifikasi.
     </p>
 </section>

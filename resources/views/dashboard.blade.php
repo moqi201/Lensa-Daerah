@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Dashboard Transparansi - LENSA DAERAH')
+
 @section('content')
 @php
     $meta    = $data['meta'];
@@ -16,177 +18,170 @@
         'UNAVAILABLE'   => 'Tidak tersedia',
     ][$meta['source']] ?? $meta['source'];
 
-    $num = fn ($n) => $n === null ? '—' : number_format($n, 0, ',', '.');
+    $num      = fn ($n) => $n === null ? '—' : number_format($n, 0, ',', '.');
     $hasItems = count($data['items']) > 0;
+    $top      = $summary['wilayah_terbanyak'] ?? null;
+
+    // Semua angka berasal dari dataset ($summary), bukan dihitung ulang di tampilan.
+    $stats = [
+        [
+            'label'    => 'Total Puskesmas',
+            'icon'     => 'fa-hospital-user',
+            'value'    => $num($summary['total_puskesmas']),
+            'note'     => 'Jumlah dari dataset, wilayah yang dipilih',
+            'featured' => true,
+        ],
+        [
+            'label' => 'Jumlah Wilayah',
+            'icon'  => 'fa-map-location-dot',
+            'value' => $num($summary['total_wilayah']),
+            'note'  => 'Kabupaten/Kota pada data',
+        ],
+        [
+            'label' => 'Terbanyak',
+            'icon'  => 'fa-chart-column',
+            'value' => $top ? $num($top['jumlah_puskesmas']) : '—',
+            'note'  => $top['nama_kabupaten_kota'] ?? 'Tidak ada data',
+        ],
+        [
+            'label' => 'Periode Data',
+            'icon'  => 'fa-calendar-days',
+            'value' => $summary['tahun'] ?: 'Tidak dilaporkan',
+            'note'  => $summary['tahun'] ? 'Tahun dataset yang ditampilkan' : 'Sumber tidak menyertakan tahun',
+            'small' => !$summary['tahun'],
+        ],
+    ];
 @endphp
 
-<!-- HERO & FILTER SECTION -->
-<section class="relative pt-8 pb-10 bg-gradient-to-b from-white via-slate-50 to-slate-100/50 border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="lg:flex lg:items-center lg:justify-between gap-8">
+<!-- HERO, FILTER, STATUS DATA, STATISTIK -->
+<section class="border-b border-white/10" aria-labelledby="dashboard-title">
+    <div class="mx-auto max-w-7xl px-4 pb-10 pt-10 sm:px-6 lg:px-8 lg:pt-14">
+        <div class="gap-10 lg:flex lg:items-end lg:justify-between">
             <div class="max-w-3xl">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-semibold mb-3">
-                    <i class="fa-solid fa-shield-halved text-brand-600"></i> Kompetisi Web In Action (WIA)
-                </div>
-                <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
+                <span class="chip"><i class="fa-solid fa-shield-halved text-mist" aria-hidden="true"></i> Kompetisi Web In Action (WIA)</span>
+                <h1 id="dashboard-title" class="mt-4 text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
                     Transparansi Fasilitas Kesehatan & Data Publik Jawa Barat
                 </h1>
-                <p class="mt-3 text-base sm:text-lg text-slate-600 leading-relaxed">
+                <p class="mt-4 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
                     Platform pengolah REST API Open Data Jawa Barat. Menyajikan jumlah Puskesmas per Kabupaten & Kota apa adanya dari sumber, lengkap dengan status dan keterbatasan datanya.
                 </p>
             </div>
 
-            <!-- FILTER FORM -->
-            <div class="mt-6 lg:mt-0 bg-white p-5 rounded-2xl shadow-lg shadow-slate-200/50 border border-slate-200 min-w-[320px]">
+            <!-- FILTER WILAYAH -->
+            <div class="glass mt-8 w-full p-5 lg:mt-0 lg:max-w-sm">
                 <form method="GET" action="{{ route('dashboard') }}">
-                    <label for="kabupaten" class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-2">
-                        <i class="fa-solid fa-map-location-dot text-brand-600 mr-1.5"></i> Pilih Wilayah Kab / Kota:
+                    <label for="kabupaten" class="mb-2 flex items-center gap-2 text-sm font-semibold text-slate-100">
+                        <i class="fa-solid fa-map-location-dot text-mist" aria-hidden="true"></i> Pilih wilayah Kab / Kota
                     </label>
-                    <select id="kabupaten" name="kabupaten" onchange="this.form.submit()" class="w-full bg-slate-50 border border-slate-300 text-slate-800 text-sm rounded-xl focus:ring-2 focus:ring-brand-500 focus:border-brand-500 p-3 font-semibold transition-all">
+                    <select id="kabupaten" name="kabupaten" onchange="this.form.submit()" class="field font-semibold">
                         <option value="SEMUA" {{ $selectedKabupaten == 'SEMUA' ? 'selected' : '' }}>-- Semua Kab/Kota Jawa Barat --</option>
                         @foreach($kabOptions as $kab)
                             <option value="{{ $kab }}" {{ $selectedKabupaten == $kab ? 'selected' : '' }}>{{ $kab }}</option>
                         @endforeach
                     </select>
+                    <noscript><button type="submit" class="btn-primary mt-3 w-full">Terapkan filter</button></noscript>
                 </form>
-                <div class="mt-3 flex items-center justify-between text-xs text-slate-500 pt-2 border-t border-slate-100">
-                    <span><i class="fa-solid fa-database mr-1"></i> Sumber: {{ $sourceLabel }}</span>
+                <div class="mt-4 flex items-center justify-between gap-3 border-t border-white/10 pt-3 text-xs text-slate-400">
+                    <span><i class="fa-solid fa-database mr-1" aria-hidden="true"></i> Sumber: {{ $sourceLabel }}</span>
                     @if($meta['source'] === 'LIVE_REST_API' && $meta['latency'] !== null)
-                        <span class="text-emerald-600 font-bold"><i class="fa-solid fa-bolt mr-1"></i> {{ $meta['latency'] }} ms</span>
+                        <span class="font-semibold text-emerald-300"><i class="fa-solid fa-bolt mr-1" aria-hidden="true"></i> {{ $meta['latency'] }} ms</span>
                     @endif
                 </div>
             </div>
         </div>
 
         <!-- STATUS SUMBER DATA & CATATAN KUALITAS -->
-        <div class="mt-8">
+        <div class="mt-10">
             @include('partials.data-status', ['meta' => $meta])
         </div>
 
-        <!-- STAT CARDS (semua angka dapat ditelusuri ke dataset) -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-                <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Total Puskesmas</span>
-                    <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
-                        <i class="fa-solid fa-hospital-user text-lg"></i>
+        <!-- KARTU STATISTIK -->
+        <dl class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            @foreach($stats as $stat)
+                @php $featured = !empty($stat['featured']); @endphp
+                <div class="{{ $featured
+                        ? 'rounded-3xl border border-white/10 bg-gradient-to-br from-electric via-iris to-amethyst p-5 shadow-lg shadow-amethyst/20'
+                        : 'glass p-5' }}">
+                    <div class="flex items-center justify-between gap-3">
+                        <dt class="text-sm font-semibold {{ $featured ? 'text-white/90' : 'text-slate-300' }}">{{ $stat['label'] }}</dt>
+                        <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl {{ $featured ? 'bg-white/20 text-white' : 'bg-white/5 text-mist' }}">
+                            <i class="fa-solid {{ $stat['icon'] }} text-lg" aria-hidden="true"></i>
+                        </span>
                     </div>
+                    <dd class="mt-4">
+                        <span class="block break-words font-extrabold text-white {{ !empty($stat['small']) ? 'text-xl text-slate-300' : 'text-3xl' }}">{{ $stat['value'] }}</span>
+                        <span class="mt-1 block text-xs {{ $featured ? 'text-white/90' : 'text-slate-400' }}">{{ $stat['note'] }}</span>
+                    </dd>
                 </div>
-                <div class="mt-3">
-                    <h3 class="text-3xl font-extrabold text-slate-900">{{ $num($summary['total_puskesmas']) }}</h3>
-                    <p class="text-xs text-slate-500 mt-1">Jumlah dari dataset, wilayah yang dipilih</p>
-                </div>
-            </div>
-
-            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-                <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Jumlah Wilayah</span>
-                    <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
-                        <i class="fa-solid fa-map-location-dot text-lg"></i>
-                    </div>
-                </div>
-                <div class="mt-3">
-                    <h3 class="text-3xl font-extrabold text-slate-900">{{ $num($summary['total_wilayah']) }}</h3>
-                    <p class="text-xs text-slate-500 mt-1">Kabupaten/Kota pada data</p>
-                </div>
-            </div>
-
-            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-                <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Terbanyak</span>
-                    <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center">
-                        <i class="fa-solid fa-chart-column text-lg"></i>
-                    </div>
-                </div>
-                <div class="mt-3">
-                    @if($summary['wilayah_terbanyak'])
-                        <h3 class="text-3xl font-extrabold text-slate-900">{{ $num($summary['wilayah_terbanyak']['jumlah_puskesmas']) }}</h3>
-                        <p class="text-xs text-slate-500 mt-1">{{ $summary['wilayah_terbanyak']['nama_kabupaten_kota'] }}</p>
-                    @else
-                        <h3 class="text-3xl font-extrabold text-slate-900">—</h3>
-                        <p class="text-xs text-slate-500 mt-1">Tidak ada data</p>
-                    @endif
-                </div>
-            </div>
-
-            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-                <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Periode Data</span>
-                    <div class="w-10 h-10 rounded-xl bg-slate-100 text-slate-600 flex items-center justify-center">
-                        <i class="fa-solid fa-calendar-days text-lg"></i>
-                    </div>
-                </div>
-                <div class="mt-3">
-                    @if($summary['tahun'])
-                        <h3 class="text-3xl font-extrabold text-slate-900">{{ $summary['tahun'] }}</h3>
-                        <p class="text-xs text-slate-500 mt-1">Tahun dataset yang ditampilkan</p>
-                    @else
-                        <h3 class="text-xl font-extrabold text-slate-500">Tidak dilaporkan</h3>
-                        <p class="text-xs text-slate-500 mt-1">Sumber tidak menyertakan tahun</p>
-                    @endif
-                </div>
-            </div>
-        </div>
+            @endforeach
+        </dl>
     </div>
 </section>
 
-<!-- CHARTS SECTION -->
-<section class="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- GRAFIK -->
+<section class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8" aria-label="Grafik jumlah Puskesmas">
     @if($hasItems)
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div class="lg:col-span-2 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                <h3 class="font-bold text-slate-800 text-base mb-4">Sebaran Puskesmas per Wilayah</h3>
-                <div class="h-80">
-                    <canvas id="barChart"></canvas>
+        <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
+            <div class="glass min-w-0 p-5 sm:p-6 lg:col-span-2">
+                <h2 class="text-base font-bold text-white">Sebaran Puskesmas per Wilayah</h2>
+                <p class="mt-1 text-xs text-slate-400 sm:hidden">Geser ke samping untuk melihat semua wilayah.</p>
+                <div class="mt-4 overflow-x-auto">
+                    <div id="bar-wrap" class="h-80">
+                        <canvas id="barChart" role="img" aria-label="Grafik batang jumlah Puskesmas per wilayah. Rinciannya ada di tabel di bawah."></canvas>
+                    </div>
                 </div>
             </div>
 
-            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                <h3 class="font-bold text-slate-800 text-base mb-4">Proporsi Puskesmas per Wilayah</h3>
-                <div class="h-80 flex items-center justify-center">
-                    <canvas id="donutChart"></canvas>
+            <div class="glass min-w-0 p-5 sm:p-6">
+                <h2 class="text-base font-bold text-white">Proporsi Puskesmas per Wilayah</h2>
+                <div class="mt-4 flex h-80 items-center justify-center">
+                    <canvas id="donutChart" role="img" aria-label="Grafik donat proporsi Puskesmas di delapan wilayah terbesar dan wilayah lainnya."></canvas>
                 </div>
             </div>
         </div>
     @else
-        <div class="bg-white p-10 rounded-2xl border border-slate-200 text-center">
-            <i class="fa-solid fa-chart-column text-4xl text-slate-300 mb-3"></i>
-            <h3 class="font-bold text-slate-700">Grafik belum dapat ditampilkan</h3>
-            <p class="text-slate-500 text-xs mt-1">Tidak ada data untuk wilayah ini atau sumber data sedang tidak tersedia. Lihat status data di bagian atas halaman.</p>
+        <div class="glass p-10 text-center">
+            <i class="fa-solid fa-chart-column mb-3 text-4xl text-slate-600" aria-hidden="true"></i>
+            <h2 class="font-bold text-slate-100">Grafik belum dapat ditampilkan</h2>
+            <p class="mx-auto mt-1 max-w-md text-xs text-slate-400">Tidak ada data untuk wilayah ini atau sumber data sedang tidak tersedia. Lihat status data di bagian atas halaman.</p>
         </div>
     @endif
 </section>
 
-<!-- DATA TABLE SECTION -->
-<section class="py-10 bg-white border-t border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="md:flex md:items-center md:justify-between mb-6">
+<!-- TABEL DATA WILAYAH -->
+<section class="border-t border-white/10 py-10" aria-labelledby="table-title">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-6 gap-4 md:flex md:items-end md:justify-between">
             <div>
-                <h2 class="font-serif text-2xl font-bold text-slate-900">Rincian Data Wilayah Jawa Barat</h2>
-                <p class="text-slate-600 text-sm mt-1">Menampilkan {{ count($data['items']) }} wilayah dari dataset jumlah Puskesmas</p>
+                <h2 id="table-title" class="section-title">Rincian Data Wilayah Jawa Barat</h2>
+                <p class="mt-1 text-sm text-slate-400">Menampilkan {{ count($data['items']) }} wilayah dari dataset jumlah Puskesmas</p>
             </div>
-            <input type="text" id="search-input" placeholder="Cari nama kabupaten/kota..." class="mt-3 md:mt-0 px-4 py-2 bg-slate-50 border border-slate-300 rounded-xl text-sm font-medium w-full md:w-64">
+            <div class="mt-4 w-full md:mt-0 md:w-72">
+                <label for="search-input" class="sr-only">Cari nama kabupaten/kota</label>
+                <input type="search" id="search-input" autocomplete="off" placeholder="Cari nama kabupaten/kota..." class="field">
+            </div>
         </div>
 
-        <div class="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm">
-            <table class="w-full text-sm text-left text-slate-600">
-                <thead class="text-xs text-slate-700 uppercase bg-slate-100/90 border-b border-slate-200">
+        <div class="overflow-x-auto rounded-3xl border border-white/10 bg-white/[0.03]">
+            <table class="w-full min-w-[34rem] text-left text-sm">
+                <caption class="sr-only">Jumlah Puskesmas per kabupaten/kota</caption>
+                <thead class="border-b border-white/10 bg-white/5 text-xs text-slate-300">
                     <tr>
-                        <th class="px-6 py-4">No</th>
-                        <th class="px-6 py-4">Kabupaten / Kota</th>
-                        <th class="px-6 py-4">Jumlah Puskesmas</th>
-                        <th class="px-6 py-4">Tahun</th>
-                        <th class="px-6 py-4">Porsi dari total</th>
+                        <th scope="col" class="px-5 py-3.5 font-semibold">No</th>
+                        <th scope="col" class="px-5 py-3.5 font-semibold">Kabupaten / Kota</th>
+                        <th scope="col" class="px-5 py-3.5 font-semibold">Jumlah Puskesmas</th>
+                        <th scope="col" class="px-5 py-3.5 font-semibold">Tahun</th>
+                        <th scope="col" class="px-5 py-3.5 font-semibold">Porsi dari total</th>
                     </tr>
                 </thead>
-                <tbody id="table-body" class="divide-y divide-slate-200 bg-white">
+                <tbody id="table-body" class="divide-y divide-white/5">
                     @forelse($data['items'] as $index => $item)
-                        <tr class="hover:bg-slate-50 transition-colors">
-                            <td class="px-6 py-4 font-bold text-slate-900">{{ $index + 1 }}</td>
-                            <td class="px-6 py-4 font-bold text-slate-800">{{ $item['nama_kabupaten_kota'] }}</td>
-                            <td class="px-6 py-4 font-semibold text-blue-600">{{ $item['jumlah_puskesmas'] }} Unit</td>
-                            <td class="px-6 py-4 text-slate-600">{{ $item['tahun'] ?? '—' }}</td>
-                            <td class="px-6 py-4 text-slate-600">
+                        <tr data-row class="transition-colors hover:bg-white/[0.04]">
+                            <td class="px-5 py-3.5 font-bold text-slate-100">{{ $index + 1 }}</td>
+                            <td class="px-5 py-3.5 font-semibold text-slate-100">{{ $item['nama_kabupaten_kota'] }}</td>
+                            <td class="px-5 py-3.5 font-semibold text-mist">{{ $item['jumlah_puskesmas'] }} Unit</td>
+                            <td class="px-5 py-3.5 text-slate-300">{{ $item['tahun'] ?? '—' }}</td>
+                            <td class="px-5 py-3.5 text-slate-300">
                                 @if(($summary['total_puskesmas'] ?? 0) > 0)
                                     {{ number_format($item['jumlah_puskesmas'] / $summary['total_puskesmas'] * 100, 1, ',', '.') }}%
                                 @else
@@ -196,39 +191,43 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="5" class="px-6 py-8 text-center text-slate-400">
+                            <td colspan="5" class="px-5 py-8 text-center text-slate-400">
                                 {{ $meta['source'] === 'UNAVAILABLE' ? 'Data sementara tidak tersedia.' : 'Data tidak ditemukan.' }}
                             </td>
                         </tr>
                     @endforelse
+                    <tr id="table-empty" class="hidden">
+                        <td colspan="5" class="px-5 py-8 text-center text-slate-400">Tidak ada wilayah yang cocok dengan kata kunci.</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
+        <p id="table-count" class="sr-only" role="status" aria-live="polite"></p>
     </div>
 </section>
 
 <!-- API INSPECTOR -->
-<section class="py-10 bg-slate-900 text-white border-t border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between mb-4">
+<section class="border-t border-white/10 py-12" aria-labelledby="inspector-title">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
             <div>
-                <span class="text-xs font-bold text-brand-400 uppercase tracking-widest"><i class="fa-solid fa-terminal mr-1"></i> Live Verification</span>
-                <h2 class="font-serif text-xl font-bold">Laravel API Proxy Inspector</h2>
+                <span class="chip"><i class="fa-solid fa-terminal text-mist" aria-hidden="true"></i> Verifikasi langsung</span>
+                <h2 id="inspector-title" class="mt-3 text-xl font-extrabold tracking-tight text-white">Laravel API Proxy Inspector</h2>
             </div>
-            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg text-xs font-mono border border-slate-700">
+            <span class="rounded-lg border border-white/10 bg-white/5 px-3 py-1 font-mono text-xs text-slate-300">
                 {{ $meta['source'] }}@if(!empty($meta['error_code'])) / {{ $meta['error_code'] }}@endif
             </span>
         </div>
 
-        <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 font-mono text-xs overflow-x-auto leading-relaxed">
-            <div class="text-slate-400 mb-2 border-b border-slate-800 pb-2 flex justify-between">
-                <span>Endpoint: <span class="text-emerald-400">{{ $meta['endpoint'] }}</span></span>
+        <div class="overflow-x-auto rounded-3xl border border-white/10 bg-ink-950/80 p-4 font-mono text-xs leading-relaxed shadow-glass sm:p-5">
+            <div class="mb-3 flex flex-wrap justify-between gap-2 border-b border-white/10 pb-3 text-slate-400">
+                <span>Endpoint: <span class="break-all text-emerald-300">{{ $meta['endpoint'] }}</span></span>
                 @if($meta['source'] === 'LIVE_REST_API' && $meta['latency'] !== null)
-                    <span class="text-amber-400">Latency: {{ $meta['latency'] }} ms</span>
+                    <span class="text-amber-300">Latency: {{ $meta['latency'] }} ms</span>
                 @endif
             </div>
-            <p class="text-slate-500 mb-2">Contoh 3 baris pertama setelah diproses oleh backend (bukan respons mentah API).</p>
-            <pre class="text-slate-300 max-h-40 overflow-y-auto">{{ json_encode(array_slice($data['items'], 0, 3), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) }}</pre>
+            <p class="mb-2 text-slate-400">Contoh 3 baris pertama setelah diproses oleh backend (bukan respons mentah API).</p>
+            <pre tabindex="0" class="max-h-48 overflow-auto text-slate-300">{{ json_encode(array_slice($data['items'], 0, 3), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) }}</pre>
         </div>
     </div>
 </section>
@@ -239,26 +238,48 @@
     const itemsData = @json($data['items']);
     const shortName = (name) => name.replace(/^KABUPATEN /i, 'KAB. ');
 
-    if (itemsData.length > 0 && document.getElementById('barChart')) {
+    // Warna grafik mengikuti tema gelap
+    const tone = { text: '#94A3B8', legend: '#CBD5E1', grid: 'rgba(255,255,255,.07)', surface: '#1C2836' };
+
+    if (window.Chart && itemsData.length > 0 && document.getElementById('barChart')) {
+        Chart.defaults.font.family = '"Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif';
+        Chart.defaults.color = tone.text;
+
+        const tooltip = {
+            backgroundColor: '#232F3E', borderColor: 'rgba(255,255,255,.12)', borderWidth: 1,
+            titleColor: '#F1F5F9', bodyColor: '#CBD5E1', padding: 10, cornerRadius: 10,
+        };
+
+        // Lebar grafik batang mengikuti jumlah wilayah; di layar kecil area ini bisa digeser.
+        document.getElementById('bar-wrap').style.minWidth = Math.max(560, itemsData.length * 26) + 'px';
+
         // Bar chart: jumlah Puskesmas per wilayah
-        new Chart(document.getElementById('barChart').getContext('2d'), {
+        const barCtx = document.getElementById('barChart').getContext('2d');
+        const barFill = barCtx.createLinearGradient(0, 0, 0, 320);
+        barFill.addColorStop(0, '#8C43FC');
+        barFill.addColorStop(1, '#0073BB');
+
+        new Chart(barCtx, {
             type: 'bar',
             data: {
                 labels: itemsData.map(i => shortName(i.nama_kabupaten_kota)),
                 datasets: [{
                     label: 'Jumlah Puskesmas',
                     data: itemsData.map(i => i.jumlah_puskesmas),
-                    backgroundColor: '#16a34a',
+                    backgroundColor: barFill,
                     borderRadius: 6,
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                plugins: { legend: { display: false } },
+                plugins: { legend: { display: false }, tooltip },
                 scales: {
-                    y: { beginAtZero: true },
-                    x: { ticks: { font: { size: 10 } } }
+                    y: { beginAtZero: true, grid: { color: tone.grid }, border: { display: false } },
+                    x: {
+                        grid: { display: false },
+                        ticks: { font: { size: 10 }, autoSkip: false, minRotation: 45, maxRotation: 70 }
+                    }
                 }
             }
         });
@@ -277,23 +298,49 @@
                 labels: labels,
                 datasets: [{
                     data: values,
-                    backgroundColor: ['#2563eb', '#f59e0b', '#10b981', '#f43f5e', '#8b5cf6', '#0ea5e9', '#84cc16', '#ec4899', '#94a3b8']
+                    // Selang-seling biru dan ungu dengan terang berbeda agar irisan mudah dibedakan
+                    backgroundColor: ['#0073BB', '#8C43FC', '#4DA3DB', '#A166FF', '#0052CC', '#6F42C1', '#7CC4F0', '#C9B6FF', '#64748B'],
+                    borderColor: tone.surface,
+                    borderWidth: 2,
+                    hoverOffset: 4,
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 10 } } } }
+                cutout: '62%',
+                plugins: {
+                    tooltip,
+                    legend: {
+                        position: 'bottom',
+                        labels: { color: tone.legend, usePointStyle: true, boxWidth: 8, padding: 12, font: { size: 10 } }
+                    }
+                }
             }
         });
     }
 
-    // Search Filter Input
-    document.getElementById('search-input').addEventListener('input', function (e) {
-        const query = e.target.value.toLowerCase();
-        document.querySelectorAll('#table-body tr').forEach(row => {
-            row.style.display = row.innerText.toLowerCase().includes(query) ? '' : 'none';
+    // Pencarian tabel
+    (function () {
+        const input = document.getElementById('search-input');
+        const rows = document.querySelectorAll('#table-body tr[data-row]');
+        const empty = document.getElementById('table-empty');
+        const count = document.getElementById('table-count');
+        if (!input) return;
+
+        input.addEventListener('input', function (e) {
+            const query = e.target.value.trim().toLowerCase();
+            let visible = 0;
+            rows.forEach(row => {
+                const match = row.innerText.toLowerCase().includes(query);
+                row.style.display = match ? '' : 'none';
+                if (match) visible++;
+            });
+            if (rows.length > 0) {
+                empty.classList.toggle('hidden', visible > 0);
+                count.textContent = visible + ' dari ' + rows.length + ' wilayah ditampilkan';
+            }
         });
-    });
+    })();
 </script>
 @endpush
