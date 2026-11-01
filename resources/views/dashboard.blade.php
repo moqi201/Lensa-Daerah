@@ -234,7 +234,76 @@
 @endsection
 
 @push('scripts')
+<!-- CDN CSS & JS Tom Select -->
+<link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
+
+<!-- Custom CSS Tema Gelap untuk Tom Select -->
+<style>
+    /* Mengatur tampilan form input utama */
+    .ts-wrapper .ts-control {
+        background-color: rgba(255, 255, 255, 0.05) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        color: #f1f5f9 !important;
+        border-radius: 0.5rem !important;
+        padding: 0.6rem 0.75rem !important;
+        box-shadow: none !important;
+        cursor: text !important;
+    }
+    
+    /* FIX UX: Sembunyikan item yang dipilih saat form diklik agar bersih saat mengetik */
+    .ts-wrapper.focus .ts-control .item {
+        display: none !important;
+    }
+
+    /* FIX UX: Pastikan kursor input mengambil sisa ruang penuh saat fokus */
+    .ts-wrapper.focus .ts-control > input {
+        width: 100% !important;
+        color: #f1f5f9 !important;
+        position: relative !important;
+        left: 0 !important;
+    }
+
+    /* Mengatur kotak dropdown list */
+    .ts-dropdown {
+        background-color: #0f172a !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 0.5rem !important;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5) !important;
+        margin-top: 4px !important;
+    }
+
+    /* Mengatur tiap item wilayah di dalam dropdown */
+    .ts-dropdown .option {
+        padding: 0.5rem 0.75rem !important;
+        color: #cbd5e1 !important;
+        font-weight: 600 !important;
+    }
+
+    /* Warna saat item di-hover atau dipilih */
+    .ts-dropdown .active, 
+    .ts-dropdown .selected {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        color: #ffffff !important;
+    }
+
+    /* Menghilangkan border biru default saat aktif */
+    .ts-wrapper.focus .ts-control {
+        border-color: rgba(255, 255, 255, 0.3) !important;
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1) !important;
+    }
+</style>
+
 <script>
+    // Inisialisasi dropdown select agar bisa diketik
+    new TomSelect("#kabupaten", {
+        create: false,
+        sortField: {
+            field: "text",
+            direction: "asc"
+        }
+    });
+
     const itemsData = @json($data['items']);
     const shortName = (name) => name.replace(/^KABUPATEN /i, 'KAB. ');
 
