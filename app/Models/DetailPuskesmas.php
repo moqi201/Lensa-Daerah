@@ -33,10 +33,9 @@ class DetailPuskesmas extends Model
                     'sort'     => 'id:desc',
                 ]);
 
-                if (! $response->successful()) {
-                    break;
-                }
-
+               if (! $response->successful()) {
+                 return static::failure('http_error', 'API mengembalikan HTTP ' . $response->status() . '.');
+                }   
                 $json = $response->json();
                 $rows = (is_array($json) && isset($json['data']) && is_array($json['data'])) ? $json['data'] : [];
 

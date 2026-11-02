@@ -53,21 +53,22 @@ trait FetchesOpenData
 
         return static::fallbackResult($error, $code);
     }
+protected static function httpClient(): PendingRequest
+{
+    $cfg = config('puskesmas.http');
 
-    protected static function httpClient(): PendingRequest
-    {
-        $cfg = config('puskesmas.http');
-
-        return Http::withOptions([
-            'verify'           => false, // Bypass SSL langsung aktif tanpa syarat APP_ENV
-            'force_ip_resolve' => 'v4',    // Force IPv4
-            'timeout'          => (int) ($cfg['timeout'] ?? 10),
-            'connect_timeout'  => (int) ($cfg['connect_timeout'] ?? 5),
-        ])->withHeaders([
-            'User-Agent' => $cfg['user_agent'] ?? 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
-            'Accept'     => 'application/json',
-        ]);
-    }
+    return Http::withOptions([
+        'verify'           => app()->environment('local') ? false : true,
+        'force_ip_resolve' => 'v4',
+        'timeout'          => (int) ($cfg['timeout'] ?? 10),
+        'connect_timeout'  => (int) ($cfg['connect_timeout'] ?? 5),
+    ])->withHeaders([
+        'User-Agent'      => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+        'Accept'          => 'application/json, text/plain, */*',
+        'Accept-Language' => 'id-ID,id;q=0.9,en;q=0.8',
+        'Referer'         => 'https://opendata.jabarprov.go.id/',
+    ]);
+}
 
     protected static function failure(string $code, string $message, array $context = []): array
     {

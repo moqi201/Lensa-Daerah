@@ -13,6 +13,7 @@ foreach ([
 }
 
 $env = [
+    'LOG_CHANNEL'         => 'stderr', 
     'VIEW_COMPILED_PATH'  => '/tmp/storage/framework/views',
     'APP_SERVICES_CACHE'  => '/tmp/bootstrap/cache/services.php',
     'APP_PACKAGES_CACHE'  => '/tmp/bootstrap/cache/packages.php',
