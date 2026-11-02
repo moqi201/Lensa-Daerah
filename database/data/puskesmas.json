@@ -1,0 +1,1622 @@
+[
+    {
+        "id": 270,
+        "nama_kabupaten_kota": "KOTA BANJAR",
+        "jumlah_puskesmas": 10,
+        "tahun": 2025
+    },
+    {
+        "id": 269,
+        "nama_kabupaten_kota": "KOTA TASIKMALAYA",
+        "jumlah_puskesmas": 22,
+        "tahun": 2025
+    },
+    {
+        "id": 268,
+        "nama_kabupaten_kota": "KOTA CIMAHI",
+        "jumlah_puskesmas": 13,
+        "tahun": 2025
+    },
+    {
+        "id": 267,
+        "nama_kabupaten_kota": "KOTA DEPOK",
+        "jumlah_puskesmas": 38,
+        "tahun": 2025
+    },
+    {
+        "id": 266,
+        "nama_kabupaten_kota": "KOTA BEKASI",
+        "jumlah_puskesmas": 48,
+        "tahun": 2025
+    },
+    {
+        "id": 265,
+        "nama_kabupaten_kota": "KOTA CIREBON",
+        "jumlah_puskesmas": 22,
+        "tahun": 2025
+    },
+    {
+        "id": 264,
+        "nama_kabupaten_kota": "KOTA BANDUNG",
+        "jumlah_puskesmas": 80,
+        "tahun": 2025
+    },
+    {
+        "id": 263,
+        "nama_kabupaten_kota": "KOTA SUKABUMI",
+        "jumlah_puskesmas": 15,
+        "tahun": 2025
+    },
+    {
+        "id": 262,
+        "nama_kabupaten_kota": "KOTA BOGOR",
+        "jumlah_puskesmas": 25,
+        "tahun": 2025
+    },
+    {
+        "id": 261,
+        "nama_kabupaten_kota": "KABUPATEN PANGANDARAN",
+        "jumlah_puskesmas": 15,
+        "tahun": 2025
+    },
+    {
+        "id": 260,
+        "nama_kabupaten_kota": "KABUPATEN BANDUNG BARAT",
+        "jumlah_puskesmas": 32,
+        "tahun": 2025
+    },
+    {
+        "id": 259,
+        "nama_kabupaten_kota": "KABUPATEN BEKASI",
+        "jumlah_puskesmas": 51,
+        "tahun": 2025
+    },
+    {
+        "id": 258,
+        "nama_kabupaten_kota": "KABUPATEN KARAWANG",
+        "jumlah_puskesmas": 50,
+        "tahun": 2025
+    },
+    {
+        "id": 257,
+        "nama_kabupaten_kota": "KABUPATEN PURWAKARTA",
+        "jumlah_puskesmas": 20,
+        "tahun": 2025
+    },
+    {
+        "id": 256,
+        "nama_kabupaten_kota": "KABUPATEN SUBANG",
+        "jumlah_puskesmas": 40,
+        "tahun": 2025
+    },
+    {
+        "id": 255,
+        "nama_kabupaten_kota": "KABUPATEN INDRAMAYU",
+        "jumlah_puskesmas": 49,
+        "tahun": 2025
+    },
+    {
+        "id": 254,
+        "nama_kabupaten_kota": "KABUPATEN SUMEDANG",
+        "jumlah_puskesmas": 35,
+        "tahun": 2025
+    },
+    {
+        "id": 253,
+        "nama_kabupaten_kota": "KABUPATEN MAJALENGKA",
+        "jumlah_puskesmas": 32,
+        "tahun": 2025
+    },
+    {
+        "id": 252,
+        "nama_kabupaten_kota": "KABUPATEN CIREBON",
+        "jumlah_puskesmas": 60,
+        "tahun": 2025
+    },
+    {
+        "id": 251,
+        "nama_kabupaten_kota": "KABUPATEN KUNINGAN",
+        "jumlah_puskesmas": 37,
+        "tahun": 2025
+    },
+    {
+        "id": 250,
+        "nama_kabupaten_kota": "KABUPATEN CIAMIS",
+        "jumlah_puskesmas": 37,
+        "tahun": 2025
+    },
+    {
+        "id": 249,
+        "nama_kabupaten_kota": "KABUPATEN TASIKMALAYA",
+        "jumlah_puskesmas": 40,
+        "tahun": 2025
+    },
+    {
+        "id": 248,
+        "nama_kabupaten_kota": "KABUPATEN GARUT",
+        "jumlah_puskesmas": 67,
+        "tahun": 2025
+    },
+    {
+        "id": 247,
+        "nama_kabupaten_kota": "KABUPATEN BANDUNG",
+        "jumlah_puskesmas": 62,
+        "tahun": 2025
+    },
+    {
+        "id": 246,
+        "nama_kabupaten_kota": "KABUPATEN CIANJUR",
+        "jumlah_puskesmas": 47,
+        "tahun": 2025
+    },
+    {
+        "id": 245,
+        "nama_kabupaten_kota": "KABUPATEN SUKABUMI",
+        "jumlah_puskesmas": 58,
+        "tahun": 2025
+    },
+    {
+        "id": 244,
+        "nama_kabupaten_kota": "KABUPATEN BOGOR",
+        "jumlah_puskesmas": 101,
+        "tahun": 2025
+    },
+    {
+        "id": 243,
+        "nama_kabupaten_kota": "KOTA BANJAR",
+        "jumlah_puskesmas": 10,
+        "tahun": 2024
+    },
+    {
+        "id": 242,
+        "nama_kabupaten_kota": "KOTA TASIKMALAYA",
+        "jumlah_puskesmas": 22,
+        "tahun": 2024
+    },
+    {
+        "id": 241,
+        "nama_kabupaten_kota": "KOTA CIMAHI",
+        "jumlah_puskesmas": 13,
+        "tahun": 2024
+    },
+    {
+        "id": 240,
+        "nama_kabupaten_kota": "KOTA DEPOK",
+        "jumlah_puskesmas": 38,
+        "tahun": 2024
+    },
+    {
+        "id": 239,
+        "nama_kabupaten_kota": "KOTA BEKASI",
+        "jumlah_puskesmas": 48,
+        "tahun": 2024
+    },
+    {
+        "id": 238,
+        "nama_kabupaten_kota": "KOTA CIREBON",
+        "jumlah_puskesmas": 22,
+        "tahun": 2024
+    },
+    {
+        "id": 237,
+        "nama_kabupaten_kota": "KOTA BANDUNG",
+        "jumlah_puskesmas": 80,
+        "tahun": 2024
+    },
+    {
+        "id": 236,
+        "nama_kabupaten_kota": "KOTA SUKABUMI",
+        "jumlah_puskesmas": 15,
+        "tahun": 2024
+    },
+    {
+        "id": 235,
+        "nama_kabupaten_kota": "KOTA BOGOR",
+        "jumlah_puskesmas": 25,
+        "tahun": 2024
+    },
+    {
+        "id": 234,
+        "nama_kabupaten_kota": "KABUPATEN PANGANDARAN",
+        "jumlah_puskesmas": 15,
+        "tahun": 2024
+    },
+    {
+        "id": 233,
+        "nama_kabupaten_kota": "KABUPATEN BANDUNG BARAT",
+        "jumlah_puskesmas": 32,
+        "tahun": 2024
+    },
+    {
+        "id": 232,
+        "nama_kabupaten_kota": "KABUPATEN BEKASI",
+        "jumlah_puskesmas": 51,
+        "tahun": 2024
+    },
+    {
+        "id": 231,
+        "nama_kabupaten_kota": "KABUPATEN KARAWANG",
+        "jumlah_puskesmas": 50,
+        "tahun": 2024
+    },
+    {
+        "id": 230,
+        "nama_kabupaten_kota": "KABUPATEN PURWAKARTA",
+        "jumlah_puskesmas": 20,
+        "tahun": 2024
+    },
+    {
+        "id": 229,
+        "nama_kabupaten_kota": "KABUPATEN SUBANG",
+        "jumlah_puskesmas": 40,
+        "tahun": 2024
+    },
+    {
+        "id": 228,
+        "nama_kabupaten_kota": "KABUPATEN INDRAMAYU",
+        "jumlah_puskesmas": 49,
+        "tahun": 2024
+    },
+    {
+        "id": 227,
+        "nama_kabupaten_kota": "KABUPATEN SUMEDANG",
+        "jumlah_puskesmas": 35,
+        "tahun": 2024
+    },
+    {
+        "id": 226,
+        "nama_kabupaten_kota": "KABUPATEN MAJALENGKA",
+        "jumlah_puskesmas": 32,
+        "tahun": 2024
+    },
+    {
+        "id": 225,
+        "nama_kabupaten_kota": "KABUPATEN CIREBON",
+        "jumlah_puskesmas": 60,
+        "tahun": 2024
+    },
+    {
+        "id": 224,
+        "nama_kabupaten_kota": "KABUPATEN KUNINGAN",
+        "jumlah_puskesmas": 37,
+        "tahun": 2024
+    },
+    {
+        "id": 223,
+        "nama_kabupaten_kota": "KABUPATEN CIAMIS",
+        "jumlah_puskesmas": 37,
+        "tahun": 2024
+    },
+    {
+        "id": 222,
+        "nama_kabupaten_kota": "KABUPATEN TASIKMALAYA",
+        "jumlah_puskesmas": 40,
+        "tahun": 2024
+    },
+    {
+        "id": 221,
+        "nama_kabupaten_kota": "KABUPATEN GARUT",
+        "jumlah_puskesmas": 67,
+        "tahun": 2024
+    },
+    {
+        "id": 220,
+        "nama_kabupaten_kota": "KABUPATEN BANDUNG",
+        "jumlah_puskesmas": 62,
+        "tahun": 2024
+    },
+    {
+        "id": 219,
+        "nama_kabupaten_kota": "KABUPATEN CIANJUR",
+        "jumlah_puskesmas": 47,
+        "tahun": 2024
+    },
+    {
+        "id": 218,
+        "nama_kabupaten_kota": "KABUPATEN SUKABUMI",
+        "jumlah_puskesmas": 58,
+        "tahun": 2024
+    },
+    {
+        "id": 217,
+        "nama_kabupaten_kota": "KABUPATEN BOGOR",
+        "jumlah_puskesmas": 101,
+        "tahun": 2024
+    },
+    {
+        "id": 216,
+        "nama_kabupaten_kota": "KOTA BANJAR",
+        "jumlah_puskesmas": 10,
+        "tahun": 2023
+    },
+    {
+        "id": 215,
+        "nama_kabupaten_kota": "KOTA TASIKMALAYA",
+        "jumlah_puskesmas": 22,
+        "tahun": 2023
+    },
+    {
+        "id": 214,
+        "nama_kabupaten_kota": "KOTA CIMAHI",
+        "jumlah_puskesmas": 13,
+        "tahun": 2023
+    },
+    {
+        "id": 213,
+        "nama_kabupaten_kota": "KOTA DEPOK",
+        "jumlah_puskesmas": 38,
+        "tahun": 2023
+    },
+    {
+        "id": 212,
+        "nama_kabupaten_kota": "KOTA BEKASI",
+        "jumlah_puskesmas": 47,
+        "tahun": 2023
+    },
+    {
+        "id": 211,
+        "nama_kabupaten_kota": "KOTA CIREBON",
+        "jumlah_puskesmas": 22,
+        "tahun": 2023
+    },
+    {
+        "id": 210,
+        "nama_kabupaten_kota": "KOTA BANDUNG",
+        "jumlah_puskesmas": 80,
+        "tahun": 2023
+    },
+    {
+        "id": 209,
+        "nama_kabupaten_kota": "KOTA SUKABUMI",
+        "jumlah_puskesmas": 15,
+        "tahun": 2023
+    },
+    {
+        "id": 208,
+        "nama_kabupaten_kota": "KOTA BOGOR",
+        "jumlah_puskesmas": 25,
+        "tahun": 2023
+    },
+    {
+        "id": 207,
+        "nama_kabupaten_kota": "KABUPATEN PANGANDARAN",
+        "jumlah_puskesmas": 15,
+        "tahun": 2023
+    },
+    {
+        "id": 206,
+        "nama_kabupaten_kota": "KABUPATEN BANDUNG BARAT",
+        "jumlah_puskesmas": 32,
+        "tahun": 2023
+    },
+    {
+        "id": 205,
+        "nama_kabupaten_kota": "KABUPATEN BEKASI",
+        "jumlah_puskesmas": 46,
+        "tahun": 2023
+    },
+    {
+        "id": 204,
+        "nama_kabupaten_kota": "KABUPATEN KARAWANG",
+        "jumlah_puskesmas": 50,
+        "tahun": 2023
+    },
+    {
+        "id": 203,
+        "nama_kabupaten_kota": "KABUPATEN PURWAKARTA",
+        "jumlah_puskesmas": 20,
+        "tahun": 2023
+    },
+    {
+        "id": 202,
+        "nama_kabupaten_kota": "KABUPATEN SUBANG",
+        "jumlah_puskesmas": 40,
+        "tahun": 2023
+    },
+    {
+        "id": 201,
+        "nama_kabupaten_kota": "KABUPATEN INDRAMAYU",
+        "jumlah_puskesmas": 49,
+        "tahun": 2023
+    },
+    {
+        "id": 200,
+        "nama_kabupaten_kota": "KABUPATEN SUMEDANG",
+        "jumlah_puskesmas": 35,
+        "tahun": 2023
+    },
+    {
+        "id": 199,
+        "nama_kabupaten_kota": "KABUPATEN MAJALENGKA",
+        "jumlah_puskesmas": 32,
+        "tahun": 2023
+    },
+    {
+        "id": 198,
+        "nama_kabupaten_kota": "KABUPATEN CIREBON",
+        "jumlah_puskesmas": 60,
+        "tahun": 2023
+    },
+    {
+        "id": 197,
+        "nama_kabupaten_kota": "KABUPATEN KUNINGAN",
+        "jumlah_puskesmas": 37,
+        "tahun": 2023
+    },
+    {
+        "id": 196,
+        "nama_kabupaten_kota": "KABUPATEN CIAMIS",
+        "jumlah_puskesmas": 37,
+        "tahun": 2023
+    },
+    {
+        "id": 195,
+        "nama_kabupaten_kota": "KABUPATEN TASIKMALAYA",
+        "jumlah_puskesmas": 40,
+        "tahun": 2023
+    },
+    {
+        "id": 194,
+        "nama_kabupaten_kota": "KABUPATEN GARUT",
+        "jumlah_puskesmas": 67,
+        "tahun": 2023
+    },
+    {
+        "id": 193,
+        "nama_kabupaten_kota": "KABUPATEN BANDUNG",
+        "jumlah_puskesmas": 62,
+        "tahun": 2023
+    },
+    {
+        "id": 192,
+        "nama_kabupaten_kota": "KABUPATEN CIANJUR",
+        "jumlah_puskesmas": 47,
+        "tahun": 2023
+    },
+    {
+        "id": 191,
+        "nama_kabupaten_kota": "KABUPATEN SUKABUMI",
+        "jumlah_puskesmas": 58,
+        "tahun": 2023
+    },
+    {
+        "id": 190,
+        "nama_kabupaten_kota": "KABUPATEN BOGOR",
+        "jumlah_puskesmas": 101,
+        "tahun": 2023
+    },
+    {
+        "id": 189,
+        "nama_kabupaten_kota": "KOTA BANJAR",
+        "jumlah_puskesmas": 10,
+        "tahun": 2022
+    },
+    {
+        "id": 188,
+        "nama_kabupaten_kota": "KOTA TASIKMALAYA",
+        "jumlah_puskesmas": 22,
+        "tahun": 2022
+    },
+    {
+        "id": 187,
+        "nama_kabupaten_kota": "KOTA CIMAHI",
+        "jumlah_puskesmas": 13,
+        "tahun": 2022
+    },
+    {
+        "id": 186,
+        "nama_kabupaten_kota": "KOTA DEPOK",
+        "jumlah_puskesmas": 38,
+        "tahun": 2022
+    },
+    {
+        "id": 185,
+        "nama_kabupaten_kota": "KOTA BEKASI",
+        "jumlah_puskesmas": 48,
+        "tahun": 2022
+    },
+    {
+        "id": 184,
+        "nama_kabupaten_kota": "KOTA CIREBON",
+        "jumlah_puskesmas": 22,
+        "tahun": 2022
+    },
+    {
+        "id": 183,
+        "nama_kabupaten_kota": "KOTA BANDUNG",
+        "jumlah_puskesmas": 80,
+        "tahun": 2022
+    },
+    {
+        "id": 182,
+        "nama_kabupaten_kota": "KOTA SUKABUMI",
+        "jumlah_puskesmas": 15,
+        "tahun": 2022
+    },
+    {
+        "id": 181,
+        "nama_kabupaten_kota": "KOTA BOGOR",
+        "jumlah_puskesmas": 25,
+        "tahun": 2022
+    },
+    {
+        "id": 180,
+        "nama_kabupaten_kota": "KABUPATEN PANGANDARAN",
+        "jumlah_puskesmas": 15,
+        "tahun": 2022
+    },
+    {
+        "id": 179,
+        "nama_kabupaten_kota": "KABUPATEN BANDUNG BARAT",
+        "jumlah_puskesmas": 32,
+        "tahun": 2022
+    },
+    {
+        "id": 178,
+        "nama_kabupaten_kota": "KABUPATEN BEKASI",
+        "jumlah_puskesmas": 46,
+        "tahun": 2022
+    },
+    {
+        "id": 177,
+        "nama_kabupaten_kota": "KABUPATEN KARAWANG",
+        "jumlah_puskesmas": 50,
+        "tahun": 2022
+    },
+    {
+        "id": 176,
+        "nama_kabupaten_kota": "KABUPATEN PURWAKARTA",
+        "jumlah_puskesmas": 20,
+        "tahun": 2022
+    },
+    {
+        "id": 175,
+        "nama_kabupaten_kota": "KABUPATEN SUBANG",
+        "jumlah_puskesmas": 40,
+        "tahun": 2022
+    },
+    {
+        "id": 174,
+        "nama_kabupaten_kota": "KABUPATEN INDRAMAYU",
+        "jumlah_puskesmas": 49,
+        "tahun": 2022
+    },
+    {
+        "id": 173,
+        "nama_kabupaten_kota": "KABUPATEN SUMEDANG",
+        "jumlah_puskesmas": 35,
+        "tahun": 2022
+    },
+    {
+        "id": 172,
+        "nama_kabupaten_kota": "KABUPATEN MAJALENGKA",
+        "jumlah_puskesmas": 32,
+        "tahun": 2022
+    },
+    {
+        "id": 171,
+        "nama_kabupaten_kota": "KABUPATEN CIREBON",
+        "jumlah_puskesmas": 60,
+        "tahun": 2022
+    },
+    {
+        "id": 170,
+        "nama_kabupaten_kota": "KABUPATEN KUNINGAN",
+        "jumlah_puskesmas": 37,
+        "tahun": 2022
+    },
+    {
+        "id": 169,
+        "nama_kabupaten_kota": "KABUPATEN CIAMIS",
+        "jumlah_puskesmas": 37,
+        "tahun": 2022
+    },
+    {
+        "id": 168,
+        "nama_kabupaten_kota": "KABUPATEN TASIKMALAYA",
+        "jumlah_puskesmas": 40,
+        "tahun": 2022
+    },
+    {
+        "id": 167,
+        "nama_kabupaten_kota": "KABUPATEN GARUT",
+        "jumlah_puskesmas": 67,
+        "tahun": 2022
+    },
+    {
+        "id": 166,
+        "nama_kabupaten_kota": "KABUPATEN BANDUNG",
+        "jumlah_puskesmas": 62,
+        "tahun": 2022
+    },
+    {
+        "id": 165,
+        "nama_kabupaten_kota": "KABUPATEN CIANJUR",
+        "jumlah_puskesmas": 47,
+        "tahun": 2022
+    },
+    {
+        "id": 164,
+        "nama_kabupaten_kota": "KABUPATEN SUKABUMI",
+        "jumlah_puskesmas": 58,
+        "tahun": 2022
+    },
+    {
+        "id": 163,
+        "nama_kabupaten_kota": "KABUPATEN BOGOR",
+        "jumlah_puskesmas": 101,
+        "tahun": 2022
+    },
+    {
+        "id": 162,
+        "nama_kabupaten_kota": "KOTA BANJAR",
+        "jumlah_puskesmas": 10,
+        "tahun": 2021
+    },
+    {
+        "id": 161,
+        "nama_kabupaten_kota": "KOTA TASIKMALAYA",
+        "jumlah_puskesmas": 22,
+        "tahun": 2021
+    },
+    {
+        "id": 160,
+        "nama_kabupaten_kota": "KOTA CIMAHI",
+        "jumlah_puskesmas": 13,
+        "tahun": 2021
+    },
+    {
+        "id": 159,
+        "nama_kabupaten_kota": "KOTA DEPOK",
+        "jumlah_puskesmas": 38,
+        "tahun": 2021
+    },
+    {
+        "id": 158,
+        "nama_kabupaten_kota": "KOTA BEKASI",
+        "jumlah_puskesmas": 42,
+        "tahun": 2021
+    },
+    {
+        "id": 157,
+        "nama_kabupaten_kota": "KOTA CIREBON",
+        "jumlah_puskesmas": 22,
+        "tahun": 2021
+    },
+    {
+        "id": 156,
+        "nama_kabupaten_kota": "KOTA BANDUNG",
+        "jumlah_puskesmas": 73,
+        "tahun": 2021
+    },
+    {
+        "id": 155,
+        "nama_kabupaten_kota": "KOTA SUKABUMI",
+        "jumlah_puskesmas": 15,
+        "tahun": 2021
+    },
+    {
+        "id": 154,
+        "nama_kabupaten_kota": "KOTA BOGOR",
+        "jumlah_puskesmas": 25,
+        "tahun": 2021
+    },
+    {
+        "id": 153,
+        "nama_kabupaten_kota": "KABUPATEN PANGANDARAN",
+        "jumlah_puskesmas": 15,
+        "tahun": 2021
+    },
+    {
+        "id": 152,
+        "nama_kabupaten_kota": "KABUPATEN BANDUNG BARAT",
+        "jumlah_puskesmas": 32,
+        "tahun": 2021
+    },
+    {
+        "id": 151,
+        "nama_kabupaten_kota": "KABUPATEN BEKASI",
+        "jumlah_puskesmas": 44,
+        "tahun": 2021
+    },
+    {
+        "id": 150,
+        "nama_kabupaten_kota": "KABUPATEN KARAWANG",
+        "jumlah_puskesmas": 50,
+        "tahun": 2021
+    },
+    {
+        "id": 149,
+        "nama_kabupaten_kota": "KABUPATEN PURWAKARTA",
+        "jumlah_puskesmas": 20,
+        "tahun": 2021
+    },
+    {
+        "id": 148,
+        "nama_kabupaten_kota": "KABUPATEN SUBANG",
+        "jumlah_puskesmas": 40,
+        "tahun": 2021
+    },
+    {
+        "id": 147,
+        "nama_kabupaten_kota": "KABUPATEN INDRAMAYU",
+        "jumlah_puskesmas": 49,
+        "tahun": 2021
+    },
+    {
+        "id": 146,
+        "nama_kabupaten_kota": "KABUPATEN SUMEDANG",
+        "jumlah_puskesmas": 35,
+        "tahun": 2021
+    },
+    {
+        "id": 145,
+        "nama_kabupaten_kota": "KABUPATEN MAJALENGKA",
+        "jumlah_puskesmas": 32,
+        "tahun": 2021
+    },
+    {
+        "id": 144,
+        "nama_kabupaten_kota": "KABUPATEN CIREBON",
+        "jumlah_puskesmas": 60,
+        "tahun": 2021
+    },
+    {
+        "id": 143,
+        "nama_kabupaten_kota": "KABUPATEN KUNINGAN",
+        "jumlah_puskesmas": 37,
+        "tahun": 2021
+    },
+    {
+        "id": 142,
+        "nama_kabupaten_kota": "KABUPATEN CIAMIS",
+        "jumlah_puskesmas": 37,
+        "tahun": 2021
+    },
+    {
+        "id": 141,
+        "nama_kabupaten_kota": "KABUPATEN TASIKMALAYA",
+        "jumlah_puskesmas": 40,
+        "tahun": 2021
+    },
+    {
+        "id": 140,
+        "nama_kabupaten_kota": "KABUPATEN GARUT",
+        "jumlah_puskesmas": 67,
+        "tahun": 2021
+    },
+    {
+        "id": 139,
+        "nama_kabupaten_kota": "KABUPATEN BANDUNG",
+        "jumlah_puskesmas": 62,
+        "tahun": 2021
+    },
+    {
+        "id": 138,
+        "nama_kabupaten_kota": "KABUPATEN CIANJUR",
+        "jumlah_puskesmas": 47,
+        "tahun": 2021
+    },
+    {
+        "id": 137,
+        "nama_kabupaten_kota": "KABUPATEN SUKABUMI",
+        "jumlah_puskesmas": 58,
+        "tahun": 2021
+    },
+    {
+        "id": 136,
+        "nama_kabupaten_kota": "KABUPATEN BOGOR",
+        "jumlah_puskesmas": 101,
+        "tahun": 2021
+    },
+    {
+        "id": 135,
+        "nama_kabupaten_kota": "KOTA BANJAR",
+        "jumlah_puskesmas": 10,
+        "tahun": 2020
+    },
+    {
+        "id": 134,
+        "nama_kabupaten_kota": "KOTA TASIKMALAYA",
+        "jumlah_puskesmas": 22,
+        "tahun": 2020
+    },
+    {
+        "id": 133,
+        "nama_kabupaten_kota": "KOTA CIMAHI",
+        "jumlah_puskesmas": 13,
+        "tahun": 2020
+    },
+    {
+        "id": 132,
+        "nama_kabupaten_kota": "KOTA DEPOK",
+        "jumlah_puskesmas": 38,
+        "tahun": 2020
+    },
+    {
+        "id": 131,
+        "nama_kabupaten_kota": "KOTA BEKASI",
+        "jumlah_puskesmas": 42,
+        "tahun": 2020
+    },
+    {
+        "id": 130,
+        "nama_kabupaten_kota": "KOTA CIREBON",
+        "jumlah_puskesmas": 22,
+        "tahun": 2020
+    },
+    {
+        "id": 129,
+        "nama_kabupaten_kota": "KOTA BANDUNG",
+        "jumlah_puskesmas": 80,
+        "tahun": 2020
+    },
+    {
+        "id": 128,
+        "nama_kabupaten_kota": "KOTA SUKABUMI",
+        "jumlah_puskesmas": 15,
+        "tahun": 2020
+    },
+    {
+        "id": 127,
+        "nama_kabupaten_kota": "KOTA BOGOR",
+        "jumlah_puskesmas": 25,
+        "tahun": 2020
+    },
+    {
+        "id": 126,
+        "nama_kabupaten_kota": "KABUPATEN PANGANDARAN",
+        "jumlah_puskesmas": 15,
+        "tahun": 2020
+    },
+    {
+        "id": 125,
+        "nama_kabupaten_kota": "KABUPATEN BANDUNG BARAT",
+        "jumlah_puskesmas": 32,
+        "tahun": 2020
+    },
+    {
+        "id": 124,
+        "nama_kabupaten_kota": "KABUPATEN BEKASI",
+        "jumlah_puskesmas": 44,
+        "tahun": 2020
+    },
+    {
+        "id": 123,
+        "nama_kabupaten_kota": "KABUPATEN KARAWANG",
+        "jumlah_puskesmas": 50,
+        "tahun": 2020
+    },
+    {
+        "id": 122,
+        "nama_kabupaten_kota": "KABUPATEN PURWAKARTA",
+        "jumlah_puskesmas": 20,
+        "tahun": 2020
+    },
+    {
+        "id": 121,
+        "nama_kabupaten_kota": "KABUPATEN SUBANG",
+        "jumlah_puskesmas": 40,
+        "tahun": 2020
+    },
+    {
+        "id": 120,
+        "nama_kabupaten_kota": "KABUPATEN INDRAMAYU",
+        "jumlah_puskesmas": 49,
+        "tahun": 2020
+    },
+    {
+        "id": 119,
+        "nama_kabupaten_kota": "KABUPATEN SUMEDANG",
+        "jumlah_puskesmas": 35,
+        "tahun": 2020
+    },
+    {
+        "id": 118,
+        "nama_kabupaten_kota": "KABUPATEN MAJALENGKA",
+        "jumlah_puskesmas": 32,
+        "tahun": 2020
+    },
+    {
+        "id": 117,
+        "nama_kabupaten_kota": "KABUPATEN CIREBON",
+        "jumlah_puskesmas": 60,
+        "tahun": 2020
+    },
+    {
+        "id": 116,
+        "nama_kabupaten_kota": "KABUPATEN KUNINGAN",
+        "jumlah_puskesmas": 37,
+        "tahun": 2020
+    },
+    {
+        "id": 115,
+        "nama_kabupaten_kota": "KABUPATEN CIAMIS",
+        "jumlah_puskesmas": 37,
+        "tahun": 2020
+    },
+    {
+        "id": 114,
+        "nama_kabupaten_kota": "KABUPATEN TASIKMALAYA",
+        "jumlah_puskesmas": 40,
+        "tahun": 2020
+    },
+    {
+        "id": 113,
+        "nama_kabupaten_kota": "KABUPATEN GARUT",
+        "jumlah_puskesmas": 67,
+        "tahun": 2020
+    },
+    {
+        "id": 112,
+        "nama_kabupaten_kota": "KABUPATEN BANDUNG",
+        "jumlah_puskesmas": 62,
+        "tahun": 2020
+    },
+    {
+        "id": 111,
+        "nama_kabupaten_kota": "KABUPATEN CIANJUR",
+        "jumlah_puskesmas": 47,
+        "tahun": 2020
+    },
+    {
+        "id": 110,
+        "nama_kabupaten_kota": "KABUPATEN SUKABUMI",
+        "jumlah_puskesmas": 58,
+        "tahun": 2020
+    },
+    {
+        "id": 109,
+        "nama_kabupaten_kota": "KABUPATEN BOGOR",
+        "jumlah_puskesmas": 101,
+        "tahun": 2020
+    },
+    {
+        "id": 108,
+        "nama_kabupaten_kota": "KOTA BANJAR",
+        "jumlah_puskesmas": 10,
+        "tahun": 2019
+    },
+    {
+        "id": 107,
+        "nama_kabupaten_kota": "KOTA TASIKMALAYA",
+        "jumlah_puskesmas": 21,
+        "tahun": 2019
+    },
+    {
+        "id": 106,
+        "nama_kabupaten_kota": "KOTA CIMAHI",
+        "jumlah_puskesmas": 13,
+        "tahun": 2019
+    },
+    {
+        "id": 105,
+        "nama_kabupaten_kota": "KOTA DEPOK",
+        "jumlah_puskesmas": 35,
+        "tahun": 2019
+    },
+    {
+        "id": 104,
+        "nama_kabupaten_kota": "KOTA BEKASI",
+        "jumlah_puskesmas": 42,
+        "tahun": 2019
+    },
+    {
+        "id": 103,
+        "nama_kabupaten_kota": "KOTA CIREBON",
+        "jumlah_puskesmas": 22,
+        "tahun": 2019
+    },
+    {
+        "id": 102,
+        "nama_kabupaten_kota": "KOTA BANDUNG",
+        "jumlah_puskesmas": 80,
+        "tahun": 2019
+    },
+    {
+        "id": 101,
+        "nama_kabupaten_kota": "KOTA SUKABUMI",
+        "jumlah_puskesmas": 15,
+        "tahun": 2019
+    },
+    {
+        "id": 100,
+        "nama_kabupaten_kota": "KOTA BOGOR",
+        "jumlah_puskesmas": 25,
+        "tahun": 2019
+    },
+    {
+        "id": 99,
+        "nama_kabupaten_kota": "KABUPATEN PANGANDARAN",
+        "jumlah_puskesmas": 15,
+        "tahun": 2019
+    },
+    {
+        "id": 98,
+        "nama_kabupaten_kota": "KABUPATEN BANDUNG BARAT",
+        "jumlah_puskesmas": 32,
+        "tahun": 2019
+    },
+    {
+        "id": 97,
+        "nama_kabupaten_kota": "KABUPATEN BEKASI",
+        "jumlah_puskesmas": 44,
+        "tahun": 2019
+    },
+    {
+        "id": 96,
+        "nama_kabupaten_kota": "KABUPATEN KARAWANG",
+        "jumlah_puskesmas": 50,
+        "tahun": 2019
+    },
+    {
+        "id": 95,
+        "nama_kabupaten_kota": "KABUPATEN PURWAKARTA",
+        "jumlah_puskesmas": 20,
+        "tahun": 2019
+    },
+    {
+        "id": 94,
+        "nama_kabupaten_kota": "KABUPATEN SUBANG",
+        "jumlah_puskesmas": 40,
+        "tahun": 2019
+    },
+    {
+        "id": 93,
+        "nama_kabupaten_kota": "KABUPATEN INDRAMAYU",
+        "jumlah_puskesmas": 49,
+        "tahun": 2019
+    },
+    {
+        "id": 92,
+        "nama_kabupaten_kota": "KABUPATEN SUMEDANG",
+        "jumlah_puskesmas": 35,
+        "tahun": 2019
+    },
+    {
+        "id": 91,
+        "nama_kabupaten_kota": "KABUPATEN MAJALENGKA",
+        "jumlah_puskesmas": 32,
+        "tahun": 2019
+    },
+    {
+        "id": 90,
+        "nama_kabupaten_kota": "KABUPATEN CIREBON",
+        "jumlah_puskesmas": 60,
+        "tahun": 2019
+    },
+    {
+        "id": 89,
+        "nama_kabupaten_kota": "KABUPATEN KUNINGAN",
+        "jumlah_puskesmas": 37,
+        "tahun": 2019
+    },
+    {
+        "id": 88,
+        "nama_kabupaten_kota": "KABUPATEN CIAMIS",
+        "jumlah_puskesmas": 37,
+        "tahun": 2019
+    },
+    {
+        "id": 87,
+        "nama_kabupaten_kota": "KABUPATEN TASIKMALAYA",
+        "jumlah_puskesmas": 40,
+        "tahun": 2019
+    },
+    {
+        "id": 86,
+        "nama_kabupaten_kota": "KABUPATEN GARUT",
+        "jumlah_puskesmas": 67,
+        "tahun": 2019
+    },
+    {
+        "id": 85,
+        "nama_kabupaten_kota": "KABUPATEN BANDUNG",
+        "jumlah_puskesmas": 62,
+        "tahun": 2019
+    },
+    {
+        "id": 84,
+        "nama_kabupaten_kota": "KABUPATEN CIANJUR",
+        "jumlah_puskesmas": 45,
+        "tahun": 2019
+    },
+    {
+        "id": 83,
+        "nama_kabupaten_kota": "KABUPATEN SUKABUMI",
+        "jumlah_puskesmas": 58,
+        "tahun": 2019
+    },
+    {
+        "id": 82,
+        "nama_kabupaten_kota": "KABUPATEN BOGOR",
+        "jumlah_puskesmas": 101,
+        "tahun": 2019
+    },
+    {
+        "id": 81,
+        "nama_kabupaten_kota": "KOTA BANJAR",
+        "jumlah_puskesmas": 10,
+        "tahun": 2018
+    },
+    {
+        "id": 80,
+        "nama_kabupaten_kota": "KOTA TASIKMALAYA",
+        "jumlah_puskesmas": 21,
+        "tahun": 2018
+    },
+    {
+        "id": 79,
+        "nama_kabupaten_kota": "KOTA CIMAHI",
+        "jumlah_puskesmas": 13,
+        "tahun": 2018
+    },
+    {
+        "id": 78,
+        "nama_kabupaten_kota": "KOTA DEPOK",
+        "jumlah_puskesmas": 35,
+        "tahun": 2018
+    },
+    {
+        "id": 77,
+        "nama_kabupaten_kota": "KOTA BEKASI",
+        "jumlah_puskesmas": 42,
+        "tahun": 2018
+    },
+    {
+        "id": 76,
+        "nama_kabupaten_kota": "KOTA CIREBON",
+        "jumlah_puskesmas": 22,
+        "tahun": 2018
+    },
+    {
+        "id": 75,
+        "nama_kabupaten_kota": "KOTA BANDUNG",
+        "jumlah_puskesmas": 80,
+        "tahun": 2018
+    },
+    {
+        "id": 74,
+        "nama_kabupaten_kota": "KOTA SUKABUMI",
+        "jumlah_puskesmas": 15,
+        "tahun": 2018
+    },
+    {
+        "id": 73,
+        "nama_kabupaten_kota": "KOTA BOGOR",
+        "jumlah_puskesmas": 25,
+        "tahun": 2018
+    },
+    {
+        "id": 72,
+        "nama_kabupaten_kota": "KABUPATEN PANGANDARAN",
+        "jumlah_puskesmas": 15,
+        "tahun": 2018
+    },
+    {
+        "id": 71,
+        "nama_kabupaten_kota": "KABUPATEN BANDUNG BARAT",
+        "jumlah_puskesmas": 32,
+        "tahun": 2018
+    },
+    {
+        "id": 70,
+        "nama_kabupaten_kota": "KABUPATEN BEKASI",
+        "jumlah_puskesmas": 54,
+        "tahun": 2018
+    },
+    {
+        "id": 69,
+        "nama_kabupaten_kota": "KABUPATEN KARAWANG",
+        "jumlah_puskesmas": 50,
+        "tahun": 2018
+    },
+    {
+        "id": 68,
+        "nama_kabupaten_kota": "KABUPATEN PURWAKARTA",
+        "jumlah_puskesmas": 20,
+        "tahun": 2018
+    },
+    {
+        "id": 67,
+        "nama_kabupaten_kota": "KABUPATEN SUBANG",
+        "jumlah_puskesmas": 40,
+        "tahun": 2018
+    },
+    {
+        "id": 66,
+        "nama_kabupaten_kota": "KABUPATEN INDRAMAYU",
+        "jumlah_puskesmas": 49,
+        "tahun": 2018
+    },
+    {
+        "id": 65,
+        "nama_kabupaten_kota": "KABUPATEN SUMEDANG",
+        "jumlah_puskesmas": 35,
+        "tahun": 2018
+    },
+    {
+        "id": 64,
+        "nama_kabupaten_kota": "KABUPATEN MAJALENGKA",
+        "jumlah_puskesmas": 32,
+        "tahun": 2018
+    },
+    {
+        "id": 63,
+        "nama_kabupaten_kota": "KABUPATEN CIREBON",
+        "jumlah_puskesmas": 60,
+        "tahun": 2018
+    },
+    {
+        "id": 62,
+        "nama_kabupaten_kota": "KABUPATEN KUNINGAN",
+        "jumlah_puskesmas": 37,
+        "tahun": 2018
+    },
+    {
+        "id": 61,
+        "nama_kabupaten_kota": "KABUPATEN CIAMIS",
+        "jumlah_puskesmas": 37,
+        "tahun": 2018
+    },
+    {
+        "id": 60,
+        "nama_kabupaten_kota": "KABUPATEN TASIKMALAYA",
+        "jumlah_puskesmas": 40,
+        "tahun": 2018
+    },
+    {
+        "id": 59,
+        "nama_kabupaten_kota": "KABUPATEN GARUT",
+        "jumlah_puskesmas": 67,
+        "tahun": 2018
+    },
+    {
+        "id": 58,
+        "nama_kabupaten_kota": "KABUPATEN BANDUNG",
+        "jumlah_puskesmas": 62,
+        "tahun": 2018
+    },
+    {
+        "id": 57,
+        "nama_kabupaten_kota": "KABUPATEN CIANJUR",
+        "jumlah_puskesmas": 45,
+        "tahun": 2018
+    },
+    {
+        "id": 56,
+        "nama_kabupaten_kota": "KABUPATEN SUKABUMI",
+        "jumlah_puskesmas": 58,
+        "tahun": 2018
+    },
+    {
+        "id": 55,
+        "nama_kabupaten_kota": "KABUPATEN BOGOR",
+        "jumlah_puskesmas": 101,
+        "tahun": 2018
+    },
+    {
+        "id": 54,
+        "nama_kabupaten_kota": "KOTA BANJAR",
+        "jumlah_puskesmas": 10,
+        "tahun": 2017
+    },
+    {
+        "id": 53,
+        "nama_kabupaten_kota": "KOTA TASIKMALAYA",
+        "jumlah_puskesmas": 20,
+        "tahun": 2017
+    },
+    {
+        "id": 52,
+        "nama_kabupaten_kota": "KOTA CIMAHI",
+        "jumlah_puskesmas": 13,
+        "tahun": 2017
+    },
+    {
+        "id": 51,
+        "nama_kabupaten_kota": "KOTA DEPOK",
+        "jumlah_puskesmas": 32,
+        "tahun": 2017
+    },
+    {
+        "id": 50,
+        "nama_kabupaten_kota": "KOTA BEKASI",
+        "jumlah_puskesmas": 31,
+        "tahun": 2017
+    },
+    {
+        "id": 49,
+        "nama_kabupaten_kota": "KOTA CIREBON",
+        "jumlah_puskesmas": 22,
+        "tahun": 2017
+    },
+    {
+        "id": 48,
+        "nama_kabupaten_kota": "KOTA BANDUNG",
+        "jumlah_puskesmas": 73,
+        "tahun": 2017
+    },
+    {
+        "id": 47,
+        "nama_kabupaten_kota": "KOTA SUKABUMI",
+        "jumlah_puskesmas": 15,
+        "tahun": 2017
+    },
+    {
+        "id": 46,
+        "nama_kabupaten_kota": "KOTA BOGOR",
+        "jumlah_puskesmas": 24,
+        "tahun": 2017
+    },
+    {
+        "id": 45,
+        "nama_kabupaten_kota": "KABUPATEN PANGANDARAN",
+        "jumlah_puskesmas": 15,
+        "tahun": 2017
+    },
+    {
+        "id": 44,
+        "nama_kabupaten_kota": "KABUPATEN BANDUNG BARAT",
+        "jumlah_puskesmas": 31,
+        "tahun": 2017
+    },
+    {
+        "id": 43,
+        "nama_kabupaten_kota": "KABUPATEN BEKASI",
+        "jumlah_puskesmas": 39,
+        "tahun": 2017
+    },
+    {
+        "id": 42,
+        "nama_kabupaten_kota": "KABUPATEN KARAWANG",
+        "jumlah_puskesmas": 50,
+        "tahun": 2017
+    },
+    {
+        "id": 41,
+        "nama_kabupaten_kota": "KABUPATEN PURWAKARTA",
+        "jumlah_puskesmas": 20,
+        "tahun": 2017
+    },
+    {
+        "id": 40,
+        "nama_kabupaten_kota": "KABUPATEN SUBANG",
+        "jumlah_puskesmas": 40,
+        "tahun": 2017
+    },
+    {
+        "id": 39,
+        "nama_kabupaten_kota": "KABUPATEN INDRAMAYU",
+        "jumlah_puskesmas": 49,
+        "tahun": 2017
+    },
+    {
+        "id": 38,
+        "nama_kabupaten_kota": "KABUPATEN SUMEDANG",
+        "jumlah_puskesmas": 32,
+        "tahun": 2017
+    },
+    {
+        "id": 37,
+        "nama_kabupaten_kota": "KABUPATEN MAJALENGKA",
+        "jumlah_puskesmas": 32,
+        "tahun": 2017
+    },
+    {
+        "id": 36,
+        "nama_kabupaten_kota": "KABUPATEN CIREBON",
+        "jumlah_puskesmas": 57,
+        "tahun": 2017
+    },
+    {
+        "id": 35,
+        "nama_kabupaten_kota": "KABUPATEN KUNINGAN",
+        "jumlah_puskesmas": 37,
+        "tahun": 2017
+    },
+    {
+        "id": 34,
+        "nama_kabupaten_kota": "KABUPATEN CIAMIS",
+        "jumlah_puskesmas": 37,
+        "tahun": 2017
+    },
+    {
+        "id": 33,
+        "nama_kabupaten_kota": "KABUPATEN TASIKMALAYA",
+        "jumlah_puskesmas": 40,
+        "tahun": 2017
+    },
+    {
+        "id": 32,
+        "nama_kabupaten_kota": "KABUPATEN GARUT",
+        "jumlah_puskesmas": 65,
+        "tahun": 2017
+    },
+    {
+        "id": 31,
+        "nama_kabupaten_kota": "KABUPATEN BANDUNG",
+        "jumlah_puskesmas": 45,
+        "tahun": 2017
+    },
+    {
+        "id": 30,
+        "nama_kabupaten_kota": "KABUPATEN CIANJUR",
+        "jumlah_puskesmas": 62,
+        "tahun": 2017
+    },
+    {
+        "id": 29,
+        "nama_kabupaten_kota": "KABUPATEN SUKABUMI",
+        "jumlah_puskesmas": 58,
+        "tahun": 2017
+    },
+    {
+        "id": 28,
+        "nama_kabupaten_kota": "KABUPATEN BOGOR",
+        "jumlah_puskesmas": 101,
+        "tahun": 2017
+    },
+    {
+        "id": 27,
+        "nama_kabupaten_kota": "KOTA BANJAR",
+        "jumlah_puskesmas": 10,
+        "tahun": 2016
+    },
+    {
+        "id": 26,
+        "nama_kabupaten_kota": "KOTA TASIKMALAYA",
+        "jumlah_puskesmas": 20,
+        "tahun": 2016
+    },
+    {
+        "id": 25,
+        "nama_kabupaten_kota": "KOTA CIMAHI",
+        "jumlah_puskesmas": 13,
+        "tahun": 2016
+    },
+    {
+        "id": 24,
+        "nama_kabupaten_kota": "KOTA DEPOK",
+        "jumlah_puskesmas": 32,
+        "tahun": 2016
+    },
+    {
+        "id": 23,
+        "nama_kabupaten_kota": "KOTA BEKASI",
+        "jumlah_puskesmas": 31,
+        "tahun": 2016
+    },
+    {
+        "id": 22,
+        "nama_kabupaten_kota": "KOTA CIREBON",
+        "jumlah_puskesmas": 22,
+        "tahun": 2016
+    },
+    {
+        "id": 21,
+        "nama_kabupaten_kota": "KOTA BANDUNG",
+        "jumlah_puskesmas": 73,
+        "tahun": 2016
+    },
+    {
+        "id": 20,
+        "nama_kabupaten_kota": "KOTA SUKABUMI",
+        "jumlah_puskesmas": 15,
+        "tahun": 2016
+    },
+    {
+        "id": 19,
+        "nama_kabupaten_kota": "KOTA BOGOR",
+        "jumlah_puskesmas": 24,
+        "tahun": 2016
+    },
+    {
+        "id": 18,
+        "nama_kabupaten_kota": "KABUPATEN PANGANDARAN",
+        "jumlah_puskesmas": 15,
+        "tahun": 2016
+    },
+    {
+        "id": 17,
+        "nama_kabupaten_kota": "KABUPATEN BANDUNG BARAT",
+        "jumlah_puskesmas": 31,
+        "tahun": 2016
+    },
+    {
+        "id": 16,
+        "nama_kabupaten_kota": "KABUPATEN BEKASI",
+        "jumlah_puskesmas": 39,
+        "tahun": 2016
+    },
+    {
+        "id": 15,
+        "nama_kabupaten_kota": "KABUPATEN KARAWANG",
+        "jumlah_puskesmas": 50,
+        "tahun": 2016
+    },
+    {
+        "id": 14,
+        "nama_kabupaten_kota": "KABUPATEN PURWAKARTA",
+        "jumlah_puskesmas": 20,
+        "tahun": 2016
+    },
+    {
+        "id": 13,
+        "nama_kabupaten_kota": "KABUPATEN SUBANG",
+        "jumlah_puskesmas": 40,
+        "tahun": 2016
+    },
+    {
+        "id": 12,
+        "nama_kabupaten_kota": "KABUPATEN INDRAMAYU",
+        "jumlah_puskesmas": 49,
+        "tahun": 2016
+    },
+    {
+        "id": 11,
+        "nama_kabupaten_kota": "KABUPATEN SUMEDANG",
+        "jumlah_puskesmas": 32,
+        "tahun": 2016
+    },
+    {
+        "id": 10,
+        "nama_kabupaten_kota": "KABUPATEN MAJALENGKA",
+        "jumlah_puskesmas": 32,
+        "tahun": 2016
+    },
+    {
+        "id": 9,
+        "nama_kabupaten_kota": "KABUPATEN CIREBON",
+        "jumlah_puskesmas": 57,
+        "tahun": 2016
+    },
+    {
+        "id": 8,
+        "nama_kabupaten_kota": "KABUPATEN KUNINGAN",
+        "jumlah_puskesmas": 37,
+        "tahun": 2016
+    },
+    {
+        "id": 7,
+        "nama_kabupaten_kota": "KABUPATEN CIAMIS",
+        "jumlah_puskesmas": 37,
+        "tahun": 2016
+    },
+    {
+        "id": 6,
+        "nama_kabupaten_kota": "KABUPATEN TASIKMALAYA",
+        "jumlah_puskesmas": 40,
+        "tahun": 2016
+    },
+    {
+        "id": 5,
+        "nama_kabupaten_kota": "KABUPATEN GARUT",
+        "jumlah_puskesmas": 65,
+        "tahun": 2016
+    },
+    {
+        "id": 4,
+        "nama_kabupaten_kota": "KABUPATEN BANDUNG",
+        "jumlah_puskesmas": 62,
+        "tahun": 2016
+    },
+    {
+        "id": 3,
+        "nama_kabupaten_kota": "KABUPATEN CIANJUR",
+        "jumlah_puskesmas": 45,
+        "tahun": 2016
+    },
+    {
+        "id": 2,
+        "nama_kabupaten_kota": "KABUPATEN SUKABUMI",
+        "jumlah_puskesmas": 58,
+        "tahun": 2016
+    },
+    {
+        "id": 1,
+        "nama_kabupaten_kota": "KABUPATEN BOGOR",
+        "jumlah_puskesmas": 101,
+        "tahun": 2016
+    }
+]

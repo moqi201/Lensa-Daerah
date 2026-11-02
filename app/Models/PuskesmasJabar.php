@@ -86,6 +86,13 @@ class PuskesmasJabar extends Model
 
     public static function getFallbackRecords(): array
     {
+         $file = database_path('data/puskesmas.json');
+    if (is_file($file)) {
+        $rows = json_decode(file_get_contents($file), true);
+        if (is_array($rows) && $rows !== []) {
+            return $rows;
+        }
+    }
         return [
             ['nama_kabupaten_kota' => 'KABUPATEN BOGOR', 'jumlah_puskesmas' => 101, 'tahun' => 2025],
             ['nama_kabupaten_kota' => 'KABUPATEN SUKABUMI', 'jumlah_puskesmas' => 58, 'tahun' => 2025],

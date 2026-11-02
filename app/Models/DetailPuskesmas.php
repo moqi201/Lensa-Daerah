@@ -100,11 +100,7 @@ class DetailPuskesmas extends Model
 
     public static function getFallbackRecords(): array
     {
-        return [
-            ['nama_kabupaten_kota' => 'KABUPATEN BOGOR', 'jumlah_puskesmas' => 101, 'tahun' => 2025],
-            ['nama_kabupaten_kota' => 'KOTA BANDUNG', 'jumlah_puskesmas' => 80, 'tahun' => 2025],
-            ['nama_kabupaten_kota' => 'KOTA BOGOR', 'jumlah_puskesmas' => 25, 'tahun' => 2025],
-        ];
+        return PuskesmasJabar::getFallbackRecords();
     }
 
     public static function getProcessedData(?string $kabupaten = null, ?string $search = null): array
