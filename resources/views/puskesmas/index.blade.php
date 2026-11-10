@@ -95,7 +95,7 @@
         <span class="chip text-slate-300">Sumber : Cache</span>
     </div>
 
-    @if(!empty($meta['message']))
+    {{-- @if(!empty($meta['message']))
         <div class="mb-5 rounded-xl border border-amber-500/30 bg-amber-500/10 p-4 text-sm text-amber-200">
             <i class="fa-solid fa-circle-info mr-2" aria-hidden="true"></i>
             {{ $meta['message'] }}
@@ -103,7 +103,7 @@
                 Petunjuk Google Maps tetap dapat dibuka melalui pencarian nama dan alamat Puskesmas.
             </span>
         </div>
-    @endif
+    @endif --}}
 
     <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
         @forelse($puskesmasList as $puskesmas)
