@@ -68,7 +68,7 @@
             </div>
 
             <!-- FILTER WILAYAH -->
-            <div class="glass mt-8 w-full p-5 lg:mt-0 lg:max-w-sm">
+            <div class="glass relative z-40 mt-8 w-full overflow-visible p-5 lg:mt-0 lg:max-w-sm">
                 <form method="GET" action="{{ route('dashboard') }}">
                     <label for="kabupaten" class="mb-2 flex items-center gap-2 text-sm font-semibold text-slate-100">
                         <i class="fa-solid fa-map-location-dot text-mist" aria-hidden="true"></i> Pilih wilayah Kab / Kota
@@ -264,13 +264,40 @@
         left: 0 !important;
     }
 
-    /* Mengatur kotak dropdown list */
+    /* Pastikan komponen filter berada di atas kartu statistik */
+    .ts-wrapper {
+        position: relative !important;
+        z-index: 50 !important;
+    }
+
+    .ts-wrapper.dropdown-active {
+        z-index: 1000 !important;
+    }
+
+    /* Dropdown dirender di atas elemen lain dan memiliki batas tinggi */
     .ts-dropdown {
+        position: absolute !important;
+        z-index: 10000 !important;
         background-color: #0f172a !important;
-        border: 1px solid rgba(255, 255, 255, 0.1) !important;
-        border-radius: 0.5rem !important;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5) !important;
-        margin-top: 4px !important;
+        border: 1px solid rgba(148, 163, 184, 0.22) !important;
+        border-radius: 0.75rem !important;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55) !important;
+        margin-top: 6px !important;
+        max-height: min(18rem, 48vh) !important;
+        overflow: hidden !important;
+    }
+
+    .ts-dropdown-content {
+        max-height: min(18rem, 48vh) !important;
+        overflow-y: auto !important;
+        overscroll-behavior: contain;
+        scrollbar-width: thin;
+        scrollbar-color: #475569 #0f172a;
+    }
+
+    .ts-dropdown .no-results {
+        padding: 0.75rem !important;
+        color: #94a3b8 !important;
     }
 
     /* Mengatur tiap item wilayah di dalam dropdown */
@@ -298,6 +325,7 @@
     // Inisialisasi dropdown select agar bisa diketik
     new TomSelect("#kabupaten", {
         create: false,
+        dropdownParent: 'body',
         sortField: {
             field: "text",
             direction: "asc"
